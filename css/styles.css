@@ -5751,8 +5751,13 @@ body[data-industry] .hero .category {
     transform: none;
     box-shadow: none;
 }
+/* The principle icons stay (Joe, 2026-10-23: he likes them). Their tinted box takes
+   the same square corner as the cards around it, and the hover zoom goes. */
 .principle-icon {
-    display: none;
+    border-radius: 2px;
+}
+.principle-card:hover .principle-icon {
+    transform: none;
 }
 .timeline-marker {
     border-radius: 2px;
