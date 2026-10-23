@@ -5801,3 +5801,56 @@ body[data-industry] .hero .category {
         text-wrap: balance;
     }
 }
+/* Phones: the principle cards and the 90-day plan nested three paddings deep and left
+   about 135px for text, so headings broke every two words and a no-break space could
+   push past the edge. Tighter padding and a stacked plan give the text the width back. */
+@media (max-width: 600px) {
+    .principle-card {
+        padding: var(--space-sm);
+    }
+    .principle-card .principle-content {
+        padding: 0;
+    }
+    .principle-details summary,
+    .principle-expanded {
+        padding: var(--space-sm);
+    }
+    .timeline::before {
+        display: none;
+    }
+    .timeline-item {
+        padding-left: 0;
+    }
+    .timeline-marker {
+        position: static;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding: 6px 10px;
+        margin-bottom: var(--space-xs);
+    }
+    .timeline-content {
+        padding: var(--space-md);
+    }
+    .card,
+    .download-section {
+        padding: var(--space-md);
+    }
+    .project-header h3 {
+        text-wrap: balance;
+    }
+    /* "Discuss Opportunities?" measures 348px at the desktop 2rem and the box is 214px
+       wide on a phone; at 1.25rem with a narrower side padding the pair fits together. */
+    .download-section {
+        padding: var(--space-md) var(--space-sm);
+    }
+    .download-section h3 {
+        font-size: 1.25rem;
+    }
+}
+/* These two wrap to a lone last word at desktop sizes too, and both are too long to
+   tie with a no-break space on a phone, so they balance their lines instead. */
+.download-section h3,
+.card li {
+    text-wrap: balance;
+}
