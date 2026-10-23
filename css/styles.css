@@ -5738,36 +5738,14 @@ body[data-industry] .hero .category {
     border-radius: 2px;
     box-shadow: none;
 }
-.card:hover,
-.principle-card:hover,
-.trust-card:hover,
-.project-card:hover,
-.testimonial-card:hover,
-.writing-card:hover,
-.timeline-item:hover .timeline-content,
-[data-industry] .card:hover,
-[data-industry] .principle-card:hover,
-[data-industry] .trust-card:hover {
-    transform: none;
-    box-shadow: none;
-}
-/* The principle icons stay (Joe, 2026-10-23: he likes them). Their tinted box takes
-   the same square corner as the cards around it, and the hover zoom goes. */
+/* The hover lift and shadow on the content blocks stay (Joe, 2026-10-23: he likes
+   them). Only the resting shadow and the rounded corners go. */
+/* The principle icons stay (Joe, 2026-10-23: he likes them), with the same square
+   corner as the cards around them. */
 .principle-icon {
     border-radius: 2px;
 }
-.principle-card:hover .principle-icon {
-    transform: none;
-}
-.timeline-marker {
-    border-radius: 2px;
-    background: var(--primary, var(--midnight));
-    box-shadow: none;
-}
-.timeline-item:hover .timeline-marker {
-    transform: none;
-    box-shadow: none;
-}
+/* The 30/60/90 markers keep their dark circles (Joe, 2026-10-23). */
 .timeline-result {
     background: none;
     border-radius: 0;
@@ -5808,7 +5786,8 @@ body[data-industry] .hero .category {
 }
 /* Phones: the principle cards and the 90-day plan nested three paddings deep and left
    about 135px for text, so headings broke every two words and a no-break space could
-   push past the edge. Tighter padding and a stacked plan give the text the width back. */
+   push past the edge. Tighter padding, and each plan circle sitting above its card
+   instead of beside it, give the text the width back. */
 @media (max-width: 600px) {
     .principle-card {
         padding: var(--space-sm);
@@ -5828,11 +5807,7 @@ body[data-industry] .hero .category {
     }
     .timeline-marker {
         position: static;
-        display: inline-block;
-        width: auto;
-        height: auto;
-        padding: 6px 10px;
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-sm);
     }
     .timeline-content {
         padding: var(--space-md);
