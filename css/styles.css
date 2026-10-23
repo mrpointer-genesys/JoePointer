@@ -5595,3 +5595,209 @@ input:focus-visible {
     .film-teaser-text small { font-size: 0.8rem; }
     .film-teaser-text { flex: 1; min-width: 0; }
 }
+
+/* ---------------------------------------------------------------- DE-TEMPLATE PASS
+   2026-10-23. Joe approved these changes one at a time against
+   _review/de-template-mockup.html (decisions logged in
+   _review/site-ai-tell-review-2026-10-22.md). Each block names its change number.
+   Kept on purpose: the gold dot-and-ring mark (Joe: it is him), Playfair Display +
+   Inter, the bold colon labels, the principle card copy. Deferred to after
+   2026-11-16: the availability banner (1) and the closing call to action (10).
+   This block sits last so it wins on source order; [data-industry] twins cover the
+   magic-link templates, and !important appears only where a template already uses it. */
+
+/* 2. Headline keyword upright. It keeps the template accent colour; only the italic goes. */
+.hero h1 em,
+[data-industry] .hero h1 em {
+    font-style: normal;
+}
+
+/* 3. Eyebrow in plain sentence case, grey, no rule. The templates force the hero
+   eyebrow white with !important, so body[data-industry] is needed to outrank them. */
+.hero .category,
+body[data-industry] .hero .category {
+    color: var(--on-dark-mid) !important;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+.hero .category::before {
+    display: none;
+}
+
+/* 4. Hero stats as one ruled row: solid numbers, no cards, no glow, no hover lift. */
+.hero .impact-metrics {
+    gap: 0;
+    border-top: 1px solid rgba(238, 241, 247, 0.16);
+}
+.hero .metric,
+[data-industry] .hero .metric {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    padding: var(--space-md) var(--space-md) 0 0;
+}
+.hero .metric + .metric {
+    padding-left: var(--space-md);
+    border-left: 1px solid rgba(238, 241, 247, 0.16);
+}
+.hero .metric::before,
+[data-industry] .hero .metric::before {
+    display: none;
+}
+.hero .metric:hover,
+[data-industry] .hero .metric:hover {
+    transform: none;
+    box-shadow: none;
+}
+.hero .metric .number,
+[data-industry] .hero .metric .number {
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    color: var(--on-dark);
+}
+.hero .metric .label {
+    letter-spacing: 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+/* Case-study stat numbers lose their gradient fill too. */
+.project-metric .number {
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    color: var(--primary, var(--midnight));
+}
+/* At two columns (768-1024px) the third stat starts a new row, so it loses the
+   divider on its left. Below 768px the stats stack in one column, so the dividers
+   run between rows instead. */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero .metric:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+@media (max-width: 767px) {
+    .hero .metric,
+    .hero .metric + .metric {
+        padding: var(--space-sm) 0;
+        border-left: 0;
+    }
+    .hero .metric + .metric {
+        border-top: 1px solid rgba(238, 241, 247, 0.16);
+    }
+}
+
+/* 5. Buttons: square corners, flat fill, no shadow, no hover lift. */
+.btn,
+[data-industry] .btn {
+    border-radius: 3px;
+    box-shadow: none;
+}
+.btn:hover,
+[data-industry] .btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+.film-teaser {
+    border-radius: 2px;
+}
+.film-teaser-thumb {
+    border-radius: 0;
+}
+
+/* 6. Thin rules instead of rounded, shadowed cards; section headings left-aligned. */
+.section-header,
+.section-header p,
+.section-header .subtitle {
+    text-align: left;
+}
+.section-header .subtitle {
+    margin-left: 0;
+}
+.section-header::after,
+[data-industry] .section-header::after {
+    margin-left: 0;
+}
+.card,
+.principle-card,
+.trust-card,
+.project-card,
+.testimonial-card,
+.writing-card,
+.timeline-content,
+[data-industry] .card,
+[data-industry] .principle-card,
+[data-industry] .trust-card {
+    border-radius: 2px;
+    box-shadow: none;
+}
+.card:hover,
+.principle-card:hover,
+.trust-card:hover,
+.project-card:hover,
+.testimonial-card:hover,
+.writing-card:hover,
+.timeline-item:hover .timeline-content,
+[data-industry] .card:hover,
+[data-industry] .principle-card:hover,
+[data-industry] .trust-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+.principle-icon {
+    display: none;
+}
+.timeline-marker {
+    border-radius: 2px;
+    background: var(--primary, var(--midnight));
+    box-shadow: none;
+}
+.timeline-item:hover .timeline-marker {
+    transform: none;
+    box-shadow: none;
+}
+.timeline-result {
+    background: none;
+    border-radius: 0;
+}
+.download-section {
+    text-align: left;
+    border-radius: 2px;
+    backdrop-filter: none;
+}
+.download-buttons {
+    justify-content: flex-start;
+}
+/* The expanders inside the cards and the case-study stat panel follow the cards. */
+.principle-details,
+.project-metrics {
+    border-radius: 2px;
+}
+/* The short gradient bar under each section heading goes; the left edge now does
+   the aligning. Templates recolour this bar but never set display, so no !important. */
+.section-header::after,
+[data-industry] .section-header::after {
+    display: none;
+}
+/* Hero buttons line up with the left-aligned hero text. At 768px and below the hero
+   stacks and centres, so the buttons stay centred there. */
+@media (min-width: 769px) {
+    .hero .cta-group {
+        justify-content: flex-start;
+    }
+}
+/* On phones the eyebrow drops a size and, when it still wraps, splits into two even lines. */
+@media (max-width: 768px) {
+    .hero .category,
+    body[data-industry] .hero .category {
+        font-size: 0.875rem;
+        text-wrap: balance;
+    }
+}
