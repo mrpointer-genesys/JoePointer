@@ -5949,20 +5949,22 @@ body[data-industry] .hero .category {
     height: 44px;
     color: var(--accent, var(--gold));
 }
-.contact-panel .contact-item .icon svg.contact-li {
+.contact-panel .contact-item .icon img.contact-li {
     width: 28px;
-    height: 28px;
+    height: auto;
     margin-left: 8px;
 }
 /* Rollover: the hovered row's icon lifts and grows slightly, and the bubble's outline
    brightens. The LinkedIn mark keeps its colours (LinkedIn's rules), so it only moves. */
-.contact-panel .contact-item .icon svg {
+.contact-panel .contact-item .icon svg,
+.contact-panel .contact-item .icon img {
     transition: transform 0.2s ease;
 }
 .contact-panel .bubble-outline {
     transition: stroke 0.2s ease, stroke-width 0.2s ease;
 }
-.contact-panel .contact-item:hover .icon svg {
+.contact-panel .contact-item:hover .icon svg,
+.contact-panel .contact-item:hover .icon img {
     transform: translateY(-2px) scale(1.08);
 }
 .contact-panel .contact-item:hover .bubble-outline {
@@ -5970,7 +5972,8 @@ body[data-industry] .hero .category {
     stroke-width: 2;
 }
 @media (prefers-reduced-motion: reduce) {
-    .contact-panel .contact-item:hover .icon svg {
+    .contact-panel .contact-item:hover .icon svg,
+    .contact-panel .contact-item:hover .icon img {
         transform: none;
     }
 }
