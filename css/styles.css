@@ -5834,3 +5834,29 @@ body[data-industry] .hero .category {
 .card li {
     text-wrap: balance;
 }
+/* David's corner rule (Joe approved 2026-10-23): every content element is square.
+   Circles stay only where they mean something: Joe's mark and headshot, the 30/60/90
+   plan markers, and the two floating controls (Ask Joe, back to top). The ACTIVELY
+   SEEKING pills are left alone until those sections change after 2026-11-16. */
+.principle-expanded,
+.project-subnav,
+.project-subnav-pill,
+.project-badge,
+.contact-item,
+.collapse-all-btn,
+.brain-callout,
+.brain-callout-btn,
+.film-player video,
+.pattern-recognition-box,
+.manifesto-truth,
+.final-outcome,
+.skip-link,
+[data-industry] .principle-expanded,
+[data-industry] .project-subnav-pill,
+[data-industry] .project-badge,
+[data-industry] .project-card,
+[data-industry] .testimonial-card,
+[data-industry] .writing-card,
+[data-industry] .timeline-content {
+    border-radius: 2px;
+}
