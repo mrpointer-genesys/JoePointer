@@ -5860,3 +5860,149 @@ body[data-industry] .hero .category {
 [data-industry] .timeline-content {
     border-radius: 2px;
 }
+
+/* ---------------------------------------------------------------- CONTACT SECTION
+   2026-10-23. Joe approved these one at a time against _review/contact-mockup.html.
+   One panel: the call to action on the left, the ways to reach Joe listed on the
+   right, left-aligned with the section heading. The heading copy waits until after
+   2026-11-16. */
+.contact-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 2px;
+}
+.contact-panel .download-section {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    text-align: left;
+}
+.contact-panel .download-section h3 {
+    margin-top: 0;
+}
+.contact-panel .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: none;
+    margin: 0;
+}
+/* Each row is one click target: the link's ::after stretches over the whole row, so
+   the icon and label open it too. Keyboard users still tab to one link per row. */
+.contact-panel .contact-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: var(--space-sm);
+    align-items: center;
+    padding: var(--space-sm) 0;
+    text-align: left;
+    background: none;
+    backdrop-filter: none;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0;
+    cursor: pointer;
+}
+.contact-panel .contact-item:first-child {
+    border-top: 0;
+}
+.contact-panel .contact-item:hover {
+    transform: none;
+    background: none;
+    box-shadow: none;
+}
+.contact-panel .contact-item .icon {
+    grid-row: span 2;
+    margin: 0;
+    line-height: 0;
+}
+.contact-panel .contact-item .label {
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+}
+.contact-panel .contact-item a {
+    word-break: normal;
+}
+.contact-panel .contact-item a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+.contact-panel .contact-item:hover a {
+    color: var(--accent-light, var(--gold-light));
+}
+.contact-panel .contact-item a:focus-visible {
+    outline: 2px solid var(--accent-light, var(--gold-light));
+    outline-offset: 4px;
+}
+/* Icon sizes. .contact-item .icon svg sets 30px further up; these are deeper so they win. */
+.contact-panel .contact-item .icon svg.contact-bubble {
+    width: 44px;
+    height: 44px;
+    color: var(--accent, var(--gold));
+}
+.contact-panel .contact-item .icon svg.contact-li {
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+}
+/* Rollover: the hovered row's icon lifts and grows slightly, and the bubble's outline
+   brightens. The LinkedIn mark keeps its colours (LinkedIn's rules), so it only moves. */
+.contact-panel .contact-item .icon svg {
+    transition: transform 0.2s ease;
+}
+.contact-panel .bubble-outline {
+    transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+.contact-panel .contact-item:hover .icon svg {
+    transform: translateY(-2px) scale(1.08);
+}
+.contact-panel .contact-item:hover .bubble-outline {
+    stroke: var(--accent-light, var(--gold-light));
+    stroke-width: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+    .contact-panel .contact-item:hover .icon svg {
+        transform: none;
+    }
+}
+/* Download Resume becomes a quiet outline beside the gold Email Me. The !important
+   matches the hero's ghost button: tech sets .btn backgrounds with !important. */
+.contact-panel .download-buttons .btn.btn-secondary {
+    background: transparent !important;
+    color: var(--on-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+@media (max-width: 768px) {
+    .contact-panel {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+    }
+}
+@media (max-width: 600px) {
+    .contact-panel .download-section {
+        padding: 0;
+    }
+}
+
+/* Floating Ask Joe button: Joe's face in the speech bubble, white outline on the pill. */
+.ask-joe-float-bubble {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: block;
+}
+@media (max-width: 768px) {
+    .ask-joe-float-bubble {
+        width: 36px;
+        height: 36px;
+    }
+}
