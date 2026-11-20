@@ -1336,3 +1336,9 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 /* Narrow phones (360px): "Transforming" at 38px was wider than the ladder's text
    column and split mid-word. Scale the stage headings with the screen there. */
 @media (max-width:400px){.stage h3{font-size:min(38px,9.4vw)}}
+
+/* The Kirkpatrick paragraph belongs to the ladder: same dark ground as the end of
+   the climb (it fades to --ink-warm), light text, gold rule kept. */
+.ladder-coda{background:var(--ink-warm);color:#d4d9e4;padding:0 0 clamp(64px,8vw,104px)!important}
+.ladder-coda .coda p{color:#d4d9e4}
+.ladder-coda + .act-paper{padding-top:clamp(64px,9vw,112px)!important}
