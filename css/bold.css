@@ -1321,3 +1321,31 @@ body{padding-top:0}
 h1,h2,h3{overflow-wrap:break-word}
 /* Selected Work menu: the tab for the case study in view is filled gold (set by app.js as you scroll or tap) */
 .project-subnav-pill.active{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--ink)!important;font-weight:600}
+
+/* ===== tailored links: the "Prepared for" bar sits above the nav, never over it ===== */
+/* --cb is the bar's height while it shows, 0 otherwise (set by the page script) */
+.nav{top:var(--cb,0px);transition:top .25s ease,background .3s,padding .3s,border-color .3s}
+.project-subnav{top:calc(68px + var(--cb,0px))!important;transition:top .25s ease}
+
+/* ===== industry templates (magic links set body[data-industry]) =====
+   Same palettes as the live site. Joe's mark stays gold on every template;
+   the headline face stays Playfair (the live page never loaded the template
+   fonts, and Joe kept Playfair in the de-template pass). */
+body[data-industry="finance"]{--t-accent:#b8860b;--t-dark:#8a6d2f;--t-light:#daa520;--t-primary:#1a365d}
+body[data-industry="tech"]{--t-accent:#3B82F6;--t-dark:#2563EB;--t-light:#60A5FA;--t-primary:#0A1E3D}
+body[data-industry="consulting"]{--t-accent:#d97706;--t-dark:#B45309;--t-light:#f59e0b;--t-primary:#334155}
+body[data-industry="healthcare"]{--t-accent:#00A3AD;--t-dark:#007079;--t-light:#4DC4CB;--t-primary:#002677}
+body[data-industry="operations"]{--t-accent:#ea580c;--t-dark:#c2410c;--t-light:#fb923c;--t-primary:#292524}
+body[data-industry]{
+  --gold:var(--t-accent);--gold-dark:var(--t-dark);
+  --line:color-mix(in srgb,var(--t-accent) 30%,transparent);
+  --ink:color-mix(in srgb,var(--t-primary) 34%,#03050b);
+  --ink-2:color-mix(in srgb,var(--t-primary) 52%,#03050b);
+  --ink-warm:color-mix(in srgb,var(--t-primary) 24%,#03050b)
+}
+body[data-industry="operations"]{--ink:#14110f;--ink-2:#221d1a;--ink-warm:#1a1410}
+/* the mark is Joe's: it keeps its gold whatever the template */
+body[data-industry] .mk{--gold-hi:#ffd27a}
+body[data-industry] .mk::after{border-color:rgba(236,200,125,.85)}
+/* the scrolled nav is solid, in the template's ink, so nothing shows through */
+.nav.scrolled{background:var(--ink)}
