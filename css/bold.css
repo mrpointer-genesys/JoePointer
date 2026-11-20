@@ -1343,7 +1343,7 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .ladder-coda .coda p{color:#d4d9e4}
 .ladder-coda + .act-paper{padding-top:clamp(64px,9vw,112px)!important}
 
-/* DRAFT 2026-11-20: the film and the session replay as two equal screens; the replay
+/* 2026-11-20 (Joe approved): the film and the session replay as two equal screens; the replay
    opens inside the site (js/replay-theater.js), with a bar to get back. */
 .watch-head{max-width:760px;margin:0 0 32px}
 .watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
