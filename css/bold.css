@@ -1310,3 +1310,12 @@ body{padding-top:0}
 /* the Kirkpatrick paragraph sits directly under the ladder */
 .ladder-coda{padding-top:56px!important;padding-bottom:8px!important}
 .ladder-coda .coda{margin-bottom:0}
+
+/* Hero on phones and short screens: size to its content, no forced full-screen gap */
+@media (max-width:900px){
+  .hero{min-height:0;padding-bottom:40px}
+  .hero-foot{padding-top:8px}
+  .hero .ctas{gap:12px}
+}
+/* long single words in display headings may break rather than push past a phone's edge */
+h1,h2,h3{overflow-wrap:break-word}
