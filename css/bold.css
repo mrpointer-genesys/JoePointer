@@ -1364,3 +1364,7 @@ a.film-poster{text-decoration:none}
 .replay-frame iframe{width:100%;height:100%;border:0;display:block;background:#05070d}
 /* While the replay is open, the site's floating buttons step aside so they do not sit on its controls. */
 html.replay-open .ask-joe-float,html.replay-open .back-to-top{display:none!important}
+/* The film player uses the replay's top bar, so both close the same way from the same corner. */
+#theater .replay-bar{position:absolute;top:0;left:0;right:0}
+#theater{padding-top:76px}
+html:has(#theater.on) .ask-joe-float,html:has(#theater.on) .back-to-top{display:none!important}
