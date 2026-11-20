@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bold.css?v=20261119h">
+    <link rel="stylesheet" href="css/bold.css?v=20261119i">
     <link rel="preload" as="image" href="images/headshot-dark.jpg?v=20260903">
     <link rel="preload" as="image" href="images/hero-mountains.jpg?v=20260903" fetchpriority="high">
 
@@ -1207,34 +1207,15 @@
             </div>
         </div>
     </div></section>
-<section class="act-dark film-band" id="ai-team"><div class="wrap film-grid"><button class="film-poster" id="playFilm2" aria-label="Play the 88-second film"><img src="expert-team/film-poster.jpg" alt=""><span class="disc"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></span></button><div class="brain-callout-body">
+<section class="act-dark film-band merged" id="ai-team" data-scene="team"><div class="wrap film-grid"><button class="film-poster" id="playFilm2" aria-label="Play the 88-second film"><img src="expert-team/film-poster.jpg" alt=""><span class="disc"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></span></button><div class="brain-callout-body">
                     <div class="brain-callout-label">How I&nbsp;work</div>
                     <h3>My AI team, in 88&nbsp;seconds</h3>
                     <p>The film covers why I built a team of AI experts, then shows one real session of the team working on a decision about my own work. Multi-agent AI with roles is not something I invented. The discipline around how I use it is&nbsp;mine.</p>
                     <a class="brain-callout-btn btn btn-accent" href="expert-team/" target="_blank" rel="noopener">Watch the full session&nbsp;replay</a>
                     <p class="brain-callout-note">The replay opens full screen in a new tab. Every seat that lights up is a real event in the session log. Music starts when you begin, and the speaker button&nbsp;mutes&nbsp;it.</p>
                 </div>
-                </div></section>
-<section class="team" id="team" data-scene="team">
-  
-  <aside class="rv a"><span class="k">REVIEW&nbsp;NOTE</span>Cut the head count. A count is exactly what Joe's ladder says proves&nbsp;nothing.<span class="sig">Marcus Webb,&nbsp;Devil's&nbsp;advocate</span></aside>
-  <aside class="rv b"><span class="k">REVIEW&nbsp;NOTE</span>"AI agents" for what they are, "my expert team" for what Joe calls them. And one plain line saying multi-agent AI with roles is not&nbsp;his.<span class="sig">Cass Whitfield, Methodology &amp; IP&nbsp;steward</span></aside>
-  <aside class="rv c"><span class="k">REVIEW&nbsp;NOTE</span>Cut a live panel of agents answering visitors. Several voices multiply the chance of a sentence Joe would never&nbsp;approve.<span class="sig">Alex Rivera, Simple&nbsp;web&nbsp;engineering</span></aside>
-  <div class="team-head">
-    
-    <h2>I don't decide on&nbsp;one&nbsp;opinion&nbsp;anymore.</h2>
-    <p>My expert team is a standing bench of AI agents, each with a defined role and its own rules. They argue before I decide. Multi-agent AI with roles is not mine. The discipline after the argument is: they converge on one recommendation, and I&nbsp;own&nbsp;the&nbsp;call.</p>
-  </div>
-  <div class="scene" id="scene">
-  </div>
-  <div class="legend" id="legend"></div>
-  <div class="seat-card" id="seatCard" aria-live="polite"><h4>Tap&nbsp;an&nbsp;orb</h4><p>Every agent has its own role and its&nbsp;own&nbsp;rules.</p></div>
-  <div class="team-ctrl">
-    <button class="pri" id="replay">Replay a&nbsp;decision</button>
-    <button class="rv-toggle" data-rv aria-pressed="false"><span class="sw"></span>How this page was&nbsp;reviewed</button>
-  </div>
-
-  <div class="record" id="record" aria-live="polite">
+                </div>
+<div class="wrap"><div class="claim" id="team"><h2>I don't decide on&nbsp;one&nbsp;opinion&nbsp;anymore<span class="mk rest" data-rest="team" aria-hidden="true"></span></h2><p>My expert team is a standing bench of AI agents, each with a defined role and its own rules. They argue before I decide. Multi-agent AI with roles is not mine. The discipline after the argument is: they converge on one recommendation, and I&nbsp;own&nbsp;the&nbsp;call.</p><aside class="rv a"><span class="k">REVIEW&nbsp;NOTE</span>Cut the head count. A count is exactly what Joe's ladder says proves&nbsp;nothing.<span class="sig">Marcus Webb,&nbsp;Devil's&nbsp;advocate</span></aside><aside class="rv b"><span class="k">REVIEW&nbsp;NOTE</span>"AI agents" for what they are, "my expert team" for what Joe calls them. And one plain line saying multi-agent AI with roles is not&nbsp;his.<span class="sig">Cass Whitfield, Methodology &amp; IP&nbsp;steward</span></aside><aside class="rv c"><span class="k">REVIEW&nbsp;NOTE</span>Cut a live panel of agents answering visitors. Several voices multiply the chance of a sentence Joe would never&nbsp;approve.<span class="sig">Alex Rivera, Simple&nbsp;web&nbsp;engineering</span></aside><div class="record show" aria-live="polite">
     <p class="meta">A REAL DECISION, 2026-11-19 &middot; ABOUT&nbsp;THIS&nbsp;PAGE</p>
     <p class="q">Joe asked: is the bold version bold enough, and should my gold dot move&nbsp;through&nbsp;the&nbsp;site?</p>
     <div class="voices">
@@ -1247,8 +1228,8 @@
       <p>Four rests, on Marcus's terms: the dot only moves inside a scene. You have been following it&nbsp;since&nbsp;the&nbsp;headline.</p>
       <small>The seats argue. I decide, and the&nbsp;decision&nbsp;is&nbsp;mine.</small>
     </div>
-  </div>
-</section>
+  </div></div></div></section>
+
 
 
 
@@ -1627,7 +1608,7 @@ function activate(name){
   });
   if(name==='team'&&window.brainArrive)window.brainArrive();
 }
-if(reduce){document.querySelectorAll('.rest').forEach(r=>r.classList.add('on'));scene.classList.add('arrived')}
+if(reduce){document.querySelectorAll('.rest').forEach(r=>r.classList.add('on'));scene&&scene.classList.add('arrived')}
 else{
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)activate(e.target.dataset.scene)}),{rootMargin:'-45% 0px -45% 0px'});
   document.querySelectorAll('[data-scene]').forEach(s=>io.observe(s));
@@ -1659,104 +1640,7 @@ function frame(){
 if(reduce){Object.keys(parts).forEach(id=>$(id).style.strokeDashoffset=0);$('r3').style.opacity=1;rider.style.cssText='top:21.7%;left:50%;opacity:1';stages.forEach(s=>s.classList.add('on'))}
 else{let t=0;addEventListener('scroll',()=>{if(!t)t=requestAnimationFrame(()=>{frame();t=0})},{passive:true});addEventListener('resize',frame);frame()}
 
-/* ===== team scene: the roster and titles already published on /expert-team ===== */
-const seats=[
- ["David Park","Portfolio & UX design"],["Alex Rivera","Simple web engineering"],["Vikram Shah","Application architecture"],
- ["Theo Nakamura","Product strategy & scope"],["Bea Ortiz","Data & measurement"],["Yusuf Adeyemi","Knowledge architecture"],
- ["Priya Raghavan","Program management"],["Marcus Webb","Devil's advocate"],["AI-Joe","Voice gate"],
- ["Margaret Chen","Resume & career brand"],["Sandra Williams","Strategy"],["James Okafor","Interview & presence"],["Patricia Moore","Instructional design"],
- ["Rachel Torres","Narrative & presentation"],["Iris Bellamy","Long-form editor"],["Nina Patel","SEO & discoverability"],["Omar Haddad","Go-to-market & launch"],
- ["Tessa Lindqvist","Songwriting & music production"],["Nadia Reyes","Video production & on-camera direction"],["Maya Brooks","Plain-language reader"],
- ["Lena Fischer","Pricing & business model"],["Fiona Grant","Finance, legal & ops"],["Kevin Walsh","AI market strategy"],["Helen Vance","AI governance & risk"],["Cass Whitfield","Methodology & IP steward"]
-];
-const cast=["David Park","Marcus Webb","Alex Rivera"];
-/* Drawn the way /expert-team draws the bench: the same palette, the same radial
-   sprites (white core, colour, soft falloff), additive light, outlined labels, and
-   connections that travel from Joe as a bright head along a faint arc. */
-const PAL={Build:"#ff9d4d","Business and practice":"#ff6fa5",Career:"#4ea8ff","Content, story, and visibility":"#c084fc",joe:"#ffd27a",edge:"#bfe9ff",label:"#e8edf5",outline:"#05070d",gate:{"AI-Joe":"#ffe9c7","Marcus Webb":"#cfe3ff"}};
-const areas=[
- {name:"Build",at:[22,24],seats:seats.slice(0,7)},
- {name:"Business and practice",at:[78,24],seats:seats.slice(20,25)},
- {name:"Career",at:[78,78],seats:seats.slice(9,13)},
- {name:"Content, story, and visibility",at:[22,78],seats:seats.slice(13,20)},
- {name:"Gates",at:[50,66],seats:seats.slice(7,9)}
-];
-const hexA=(hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255}, ${n>>8&255}, ${n&255}, ${a})`};
-const sprites=new Map;
-function disc(color){const k='d'+color;if(sprites.has(k))return sprites.get(k);const s=128,c=document.createElement('canvas');c.width=c.height=s;const g=c.getContext('2d'),gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
-  gr.addColorStop(0,"rgba(255, 255, 255, 0.95)");gr.addColorStop(.16,hexA(color,.92));gr.addColorStop(.42,hexA(color,.34));gr.addColorStop(1,hexA(color,0));g.fillStyle=gr;g.fillRect(0,0,s,s);sprites.set(k,c);return c}
-function ring(color){const k='r'+color;if(sprites.has(k))return sprites.get(k);const s=128,c=document.createElement('canvas');c.width=c.height=s;const g=c.getContext('2d'),gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
-  gr.addColorStop(0,hexA(color,0));gr.addColorStop(.55,hexA(color,.04));gr.addColorStop(.76,hexA(color,.85));gr.addColorStop(.88,hexA(color,.3));gr.addColorStop(1,hexA(color,0));g.fillStyle=gr;g.fillRect(0,0,s,s);sprites.set(k,c);return c}
 
-const card=$('seatCard'),legend=$('legend'),tall=matchMedia('(max-width:640px)').matches;
-const cv=document.createElement('canvas');cv.className='brain';cv.setAttribute('aria-hidden','true');scene.prepend(cv);
-const ctx=cv.getContext('2d');
-const nodes=[],joe={x:50,y:46,k:reduce?1:0,born:0};
-areas.forEach(a=>{
-  const col=PAL[a.name]||"#f2f4ff";
-  const lg=document.createElement('span');lg.innerHTML=`<i></i>${a.name}`;lg.style.setProperty('--c',a.name==="Gates"?"#e6ecff":col);lg.style.setProperty('--g1',hexA(a.name==="Gates"?"#cfe3ff":col,.7));legend.appendChild(lg);
-  const n=a.seats.length,R=tall?13:12;
-  a.seats.forEach(([name,role],k)=>{
-    const ang=k*2.39996+(a.at[0]<50?0.6:2.2),r=R*Math.sqrt((k+.6)/n);
-    const x=a.name==="Gates"?a.at[0]+(k?1:-1)*(tall?17:11):a.at[0]+r*Math.cos(ang)*(tall?1.15:.9);
-    const y=a.name==="Gates"?a.at[1]:a.at[1]+r*Math.sin(ang)*(tall?.75:1.15);
-    const node={name,role,x,y,color:PAL.gate[name]||col,label:name==="AI-Joe"?"AI-Joe":name.split(' ')[0],a:0,t:0,hot:0,sel:0};
-    const b=document.createElement('button');b.className='orb';b.style.left=x+'%';b.style.top=y+'%';b.setAttribute('aria-label',name+', '+role);b.dataset.name=name;
-    b.onmouseenter=b.onfocus=()=>{node.hot=1;kick()};b.onmouseleave=b.onblur=()=>{node.hot=0;kick()};
-    b.onclick=()=>{nodes.forEach(m=>m.sel=0);node.sel=1;card.innerHTML=`<h4>${name}</h4><p>${role}</p>`;kick()};
-    node.el=b;nodes.push(node);scene.appendChild(b);
-  });
-});
-const stars=Array.from({length:70},(_,i)=>({x:(i*37.7)%100,y:(i*61.3)%100,a:.12+((i*13)%10)/60,s:(i%3)?1:1.6}));
-let edges=[],pulses=[],casting=false,running=false,inView=false,W=0,H=0;
-function size(){const d=Math.min(devicePixelRatio||1,2),w=cv.clientWidth,h=cv.clientHeight;if(w!==W||h!==H){W=w;H=h;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0)}}
-const P=n=>[n.x/100*W,n.y/100*H];
-function blit(img,x,y,r,al){if(al<=.003||r<=0)return;ctx.globalAlpha=Math.min(1,al);ctx.drawImage(img,x-r,y-r,r*2,r*2)}
-function arcPt(a,b,u){const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,len=Math.hypot(b[0]-a[0],b[1]-a[1]),cx=mx,cy=my-len*.16;
-  const v=1-u;return[v*v*a[0]+2*v*u*cx+u*u*b[0],v*v*a[1]+2*v*u*cy+u*u*b[1]]}
-function strokeArc(a,b,u0,u1,al,w){if(u1<=u0||al<=0)return;ctx.globalAlpha=al;ctx.lineWidth=w;ctx.beginPath();for(let i=0;i<=24;i++){const p=arcPt(a,b,u0+(u1-u0)*i/24);i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1])}ctx.stroke()}
-function target(n){return Math.max(n.t,n.hot,n.sel)}
-function draw(now){
-  size();ctx.clearRect(0,0,W,H);const r=Math.max(6,Math.min(10,W*.011)),J=P(joe);
-  ctx.globalCompositeOperation='source-over';ctx.fillStyle='#8fa6cc';
-  stars.forEach(s=>{ctx.globalAlpha=s.a;ctx.fillRect(s.x/100*W,s.y/100*H,s.s,s.s)});
-  ctx.globalCompositeOperation='lighter';ctx.strokeStyle=PAL.edge;ctx.lineCap='round';
-  edges.forEach(e=>{const age=reduce?1:Math.min(1,(now-e.born)/900),T=P(e.to),head=.22,lead=age*(1+head);
-    strokeArc(J,T,0,Math.min(1,lead),.3,1.4);
-    if(age<1)strokeArc(J,T,Math.max(0,lead-head),Math.min(1,lead),.9,2.6);
-    if(age>=1&&!e.done){e.done=1;e.to.t=1;pulses.push({n:e.to,born:now})}});
-  nodes.forEach(n=>{n.a+=(target(n)-n.a)*(reduce?1:.12);
-    const dim=casting&&!n.t?.35:1,[x,y]=P(n);
-    blit(disc(n.color),x,y,r*3.6,(.3+.7*n.a)*dim);
-    blit(disc(n.color),x,y,r*1.35*(1+.25*n.a),(.42+.58*n.a)*dim)});
-  pulses=pulses.filter(p=>{const age=(now-p.born)/700;if(age>=1)return false;const[x,y]=P(p.n),out=1-Math.pow(1-age,3);blit(ring(p.n.color),x,y,r*(1.2+2.8*out),1-age*age);return true});
-  if(joe.born&&!reduce)joe.k=Math.min(1,(now-joe.born)/700);
-  const jk=joe.k,beat=casting?.5+.5*Math.sin(now/260):0;
-  blit(disc(PAL.joe),J[0],J[1],r*3.6*1.25*jk,.85*jk);
-  blit(disc(PAL.joe),J[0],J[1],r*1.6*jk,jk);
-  blit(ring(PAL.joe),J[0],J[1],r*2.6*1.4*Math.min(1,jk*1.3),(.55+.35*beat)*Math.max(0,jk*1.6-.6));
-  ctx.globalCompositeOperation='source-over';ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';
-  const fs=Math.max(11,Math.min(14,W*.0155));
-  const label=(t,x,y,al,wgt)=>{ctx.globalAlpha=al;ctx.font=`${wgt} ${fs}px ui-sans-serif, system-ui, "Segoe UI", sans-serif`;ctx.lineWidth=Math.max(2,fs*.18);ctx.strokeStyle=PAL.outline;ctx.strokeText(t,x,y);ctx.fillStyle=PAL.label;ctx.fillText(t,x,y)};
-  nodes.forEach(n=>{const[x,y]=P(n);label(n.label,x,y+r*1.9+fs*.5,(casting&&!n.t?.3:.62+.38*n.a),600)});
-  if(jk>0)label('Joe',J[0],J[1]+r*4+fs*.5,jk,700);
-  const busy=casting||edges.some(e=>!e.done)||pulses.length||nodes.some(n=>Math.abs(n.a-target(n))>.01)||(joe.born&&joe.k<1);
-  if(busy&&!reduce)requestAnimationFrame(draw);else running=false;
-}
-function kick(){if(!running){running=true;requestAnimationFrame(draw)}}
-new IntersectionObserver(es=>{inView=es[0].isIntersecting;if(inView)kick()}).observe(scene);
-addEventListener('resize',kick);
-window.brainArrive=()=>{if(!joe.born){joe.born=performance.now();kick()}};
-setTimeout(kick,50);
-
-$('replay').onclick=()=>{
-  casting=true;edges=[];pulses=[];nodes.forEach(n=>{n.t=0;n.sel=0});window.brainArrive();
-  const rec=$('record');rec.classList.remove('show');
-  cast.forEach((nm,i)=>{const n=nodes.find(m=>m.name===nm);setTimeout(()=>{edges.push({to:n,born:performance.now()});kick()},reduce?0:350+i*520)});
-  kick();
-  card.innerHTML='<h4>The agents from one real review</h4><p>Joe brings in David, Marcus and Alex, then makes the&nbsp;call.</p>';
-  setTimeout(()=>{casting=false;kick();rec.classList.add('show');if(!reduce)rec.scrollIntoView({behavior:'smooth',block:'nearest'})},reduce?0:2400);
-};
 
 const cbar=$('companyBanner');function cbOffset(){const on=cbar&&cbar.classList.contains('visible');document.documentElement.style.setProperty('--cb',on?cbar.offsetHeight+'px':'0px')}if(cbar){new MutationObserver(cbOffset).observe(cbar,{attributes:true,attributeFilter:['class']});addEventListener('resize',cbOffset);cbOffset();}
 })();

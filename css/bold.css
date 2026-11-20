@@ -1292,3 +1292,11 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .act-paper,.act-seam,.ladder-coda{--gold-dark:color-mix(in srgb,var(--gold-dark-src) 80%,#000)}
 /* Executive Summary gets a full section's breathing room after the Kirkpatrick paragraph */
 .ladder-coda + .act-paper{padding-top:clamp(72px,9vw,120px)!important}
+
+/* ===== one AI-team section: the film and replay first, then the claim and the dated record ===== */
+.merged .claim{max-width:900px;margin:72px auto 0;border-top:1px solid var(--line);padding-top:56px}
+.merged .claim h2{font:700 clamp(32px,4.6vw,58px)/1.08 var(--display);margin:0 0 16px;color:var(--on-dark)}
+.merged .claim h2 .mk{margin-left:.06em}
+.merged .claim > p{color:var(--mid);max-width:680px;margin:0}
+.merged .record{margin-top:40px}
+.merged .rv{position:static;width:auto;max-width:640px;margin:16px 0}
