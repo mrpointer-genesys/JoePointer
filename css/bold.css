@@ -1313,3 +1313,5 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .sky::after{background:
   linear-gradient(90deg,color-mix(in srgb,var(--ink) 92%,transparent) 0%,color-mix(in srgb,var(--ink) 55%,transparent) 55%,color-mix(in srgb,var(--ink) 20%,transparent) 100%),
   linear-gradient(180deg,color-mix(in srgb,var(--ink) 15%,transparent) 0%,color-mix(in srgb,var(--ink) 35%,transparent) 55%,var(--ink) 100%)}
+/* What I Write: each article shows when it was published */
+.writing-date{grid-column:1;font-size:13px;color:var(--text-mid);letter-spacing:.02em;margin-top:2px}
