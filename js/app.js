@@ -497,30 +497,8 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.05,
-    rootMargin: '0px 0px 0px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe cards (exclude project-cards — they're sequential content within
-// a section the user is already reading; fade-in causes invisible cards
-// that don't appear until scrolled past on mobile)
-document.querySelectorAll('.card, .trust-card, .testimonial-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
-});
+// Card fade-ins removed in the bold rebuild (2026-11-19): the team named staggered
+// fade-ins as the AI-made tell. Cards are visible on load.
 
 // ========================================
 // MOBILE MENU FUNCTIONALITY
