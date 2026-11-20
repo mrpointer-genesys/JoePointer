@@ -164,30 +164,6 @@
     width: 100%;
     background: linear-gradient(90deg, var(--accent, var(--gold)), var(--accent-light, var(--gold)));
 }
-[data-industry="finance"] .nav .quick-links a.active{
-    color: #1e3a5f;
-}
-[data-industry="finance"] .nav .quick-links a.active::after{
-    background: linear-gradient(90deg, #b8860b, #daa520);
-}
-[data-industry="tech"] .nav .quick-links a.active{
-    color: #0A1E3D;
-}
-[data-industry="tech"] .nav .quick-links a.active::after{
-    background: linear-gradient(90deg, #3B82F6, #60A5FA);
-}
-[data-industry="consulting"] .nav .quick-links a.active{
-    color: #334155;
-}
-[data-industry="consulting"] .nav .quick-links a.active::after{
-    background: linear-gradient(90deg, #d97706, #f59e0b);
-}
-[data-industry="healthcare"] .nav .quick-links a.active{
-    color: #002677;
-}
-[data-industry="healthcare"] .nav .quick-links a.active::after{
-    background: linear-gradient(90deg, #00A3AD, #4DC4CB);
-}
 @media (min-width: 768px) and (max-width: 1219px){.availability-banner{
         position: fixed;
         top: 0;
@@ -340,22 +316,6 @@
         color: var(--accent, var(--gold));
         border-left: 3px solid var(--accent, var(--gold));
         padding-left: calc(var(--space-lg) + 5px);
-    }[data-industry="finance"] .nav .quick-links a.active{
-        background: rgba(184, 134, 11, 0.2);
-        color: #daa520;
-        border-left-color: #daa520;
-    }[data-industry="tech"] .nav .quick-links a.active{
-        background: rgba(59, 130, 246, 0.15);
-        color: #3B82F6;
-        border-left-color: #3B82F6;
-    }[data-industry="consulting"] .nav .quick-links a.active{
-        background: rgba(217, 119, 6, 0.2);
-        color: #f59e0b;
-        border-left-color: #d97706;
-    }[data-industry="healthcare"] .nav .quick-links a.active{
-        background: rgba(0, 163, 173, 0.2);
-        color: #00A3AD;
-        border-left-color: #00A3AD;
     }.mobile-menu-overlay{
         position: fixed;
         top: 0;
@@ -616,10 +576,6 @@ body.menu-open .company-banner{
 [data-industry="healthcare"] .availability-banner .headline{
     color: #4DC4CB !important;
 }
-@media (max-width: 768px){[data-industry="healthcare"] .nav .quick-links a:hover{
-        background: rgba(0, 163, 173, 0.15) !important;
-        color: #00A3AD !important;
-    }}
 [data-industry="tech"] .availability-banner .status-badge{
     background: #3B82F6 !important;
     color: #FFFFFF !important;
@@ -634,10 +590,6 @@ body.menu-open .company-banner{
 [data-industry="tech"] .company-banner-label{
     color: #3B82F6 !important;
 }
-@media (max-width: 768px){[data-industry="tech"] .nav .quick-links a:hover{
-        background: rgba(59, 130, 246, 0.15) !important;
-        color: #3B82F6 !important;
-    }}
 .skip-link{
     position: fixed;
     top: 8px;
@@ -719,17 +671,6 @@ body.menu-open .company-banner{
         width: 100%;
         justify-content: center;
     }}
-[data-industry="operations"] .nav .quick-links a.active{
-    color: #292524;
-}
-[data-industry="operations"] .nav .quick-links a.active::after{
-    background: linear-gradient(90deg, #ea580c, #fb923c);
-}
-[data-industry="operations"] .nav .quick-links a.active{
-        background: rgba(234, 88, 12, 0.15);
-        color: #c2410c;
-        border-left-color: #ea580c;
-    }
 [data-industry="operations"] .availability-banner{
     background: linear-gradient(135deg, #292524, #57534e);
 }
@@ -751,10 +692,6 @@ body.menu-open .company-banner{
 [data-industry="operations"] .company-banner-label{
     color: #fb923c !important;
 }
-[data-industry="operations"] .nav .quick-links a:hover{
-        background: rgba(234, 88, 12, 0.15) !important;
-        color: #c2410c !important;
-    }
 .hero-prepared{
     font-size: 0.72rem;
     letter-spacing: 0.14em;
@@ -1349,3 +1286,7 @@ body[data-industry] .mk{--gold-hi:#ffd27a}
 body[data-industry] .mk::after{border-color:rgba(236,200,125,.85)}
 /* the scrolled nav is solid, in the template's ink, so nothing shows through */
 .nav.scrolled{background:var(--ink)}
+/* small accent text on the light paper sections: darkened so it clears 4.5:1 in every template */
+:root{--gold-dark-src:#8a6d2f}
+body[data-industry]{--gold-dark-src:var(--t-dark)}
+.act-paper,.act-seam,.ladder-coda{--gold-dark:color-mix(in srgb,var(--gold-dark-src) 80%,#000)}
