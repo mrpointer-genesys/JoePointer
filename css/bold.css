@@ -1328,3 +1328,7 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 /* Connect is the last section, so on tall screens the page ran out before its title
    could reach the line. Room enough for the jump: 120px top padding less the 76px line. */
 .close-sec{min-height:calc(100svh + 44px)}
+
+/* Phones: the ladder's three progress dashes sat under the back-to-top button. The
+   gold dot on the ladder already shows the stage, so the dashes step aside there. */
+@media (max-width:600px){.climb .prog{display:none}}
