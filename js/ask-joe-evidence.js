@@ -119,4 +119,30 @@
 
     // Exposed for testing only.
     window.askJoeEvidence._match = match;
+
+    // LOCAL TEST MODE. The worker only answers joepointer.com, so a local
+    // preview cannot get real answers. On localhost only, a "Paste an answer"
+    // button lets Joe paste an answer copied from the live Ask Joe and see
+    // which proof links it gets. Never appears on the live site.
+    if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+        document.addEventListener('DOMContentLoaded', addTestButton);
+        if (document.readyState !== 'loading') addTestButton();
+    }
+    function addTestButton() {
+        if (document.getElementById('askJoeTest')) return;
+        const row = document.querySelector('.chat-input-row');
+        if (!row || typeof appendMessage !== 'function') return;
+        const b = document.createElement('button');
+        b.id = 'askJoeTest';
+        b.type = 'button';
+        b.className = 'chat-evidence-test';
+        b.textContent = 'Local test: paste an answer from the live Ask Joe';
+        b.addEventListener('click', () => {
+            const text = window.prompt('Paste an Ask Joe answer copied from joepointer.com:');
+            if (!text || !text.trim()) return;
+            const wrap = appendMessage('ai', text.trim());
+            window.askJoeEvidence(wrap, text.trim());
+        });
+        row.parentNode.insertBefore(b, row.nextSibling);
+    }
 })();
