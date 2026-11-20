@@ -1315,3 +1315,5 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
   linear-gradient(180deg,color-mix(in srgb,var(--ink) 15%,transparent) 0%,color-mix(in srgb,var(--ink) 35%,transparent) 55%,var(--ink) 100%)}
 /* What I Write: each article shows when it was published */
 .writing-date{grid-column:1;font-size:13px;color:var(--text-mid);letter-spacing:.02em;margin-top:2px}
+/* the team's converged recommendation, between the voices and Joe's call */
+.record .converge{color:#d4d9e4;font-size:16px;border-top:1px solid var(--line);padding-top:16px;margin:0 0 24px}
