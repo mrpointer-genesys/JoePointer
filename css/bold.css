@@ -1300,3 +1300,10 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .merged .claim > p{color:var(--mid);max-width:680px;margin:0}
 .merged .record{margin-top:40px}
 .merged .rv{position:static;width:auto;max-width:640px;margin:16px 0}
+
+/* ===== wide screens: line things up ===== */
+/* the paragraph and stats under the hero start on the headline's left edge */
+.hero-foot .wrap{max-width:calc(1320px + 2 * clamp(16px,4vw,56px))}
+/* the tailored-link welcome band: a centred block, the same width as the reading sections */
+.welcome-band .container{max-width:900px;margin:0 auto;padding:0 clamp(16px,4vw,56px);text-align:center}
+.welcome-band .welcome-band-links{justify-content:center}
