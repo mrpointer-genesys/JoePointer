@@ -1317,3 +1317,8 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .writing-date{grid-column:1;font-size:13px;color:var(--text-mid);letter-spacing:.02em;margin-top:2px}
 /* the team's converged recommendation, between the voices and Joe's call */
 .record .converge{color:#d4d9e4;font-size:16px;border-top:1px solid var(--line);padding-top:16px;margin:0 0 24px}
+/* Selected Work tabs: the menu box itself scrolls sideways, which is the element app.js
+   moves to keep the highlighted tab in view as you scroll through the case studies */
+.project-subnav{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.project-subnav::-webkit-scrollbar{display:none}
+.project-subnav .project-subnav-pills{overflow:visible;width:max-content}
