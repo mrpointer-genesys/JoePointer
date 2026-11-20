@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bold.css?v=20261120e">
+    <link rel="stylesheet" href="css/bold.css?v=20261120f">
     <link rel="preload" as="image" href="images/headshot-dark.jpg?v=20260903">
     <link rel="preload" as="image" href="images/hero-mountains.jpg?v=20260903" fetchpriority="high">
 
@@ -1204,14 +1204,28 @@
             </div>
         </div>
     </div></section>
-<section class="act-dark film-band merged" id="ai-team" data-scene="team"><div class="wrap film-grid"><button class="film-poster" id="playFilm2" aria-label="Play the 88-second film"><img src="expert-team/film-poster.jpg" alt=""><span class="disc"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></span></button><div class="brain-callout-body">
-                    <div class="brain-callout-label">How I&nbsp;work</div>
-                    <h3>My AI team, in 88&nbsp;seconds</h3>
-                    <p>The film covers why I built a team of AI experts, then shows one real session of the team working on a decision about my own work. Multi-agent AI with roles is not something I invented. The discipline around how I use it is&nbsp;mine.</p>
-                    <a class="brain-callout-btn btn btn-accent" href="expert-team/" target="_blank" rel="noopener">Watch the full session&nbsp;replay</a>
-                    <p class="brain-callout-note">The replay opens full screen in a new tab. Every seat that lights up is a real event in the session log. Music starts when you begin, and the speaker button mutes&nbsp;it.</p>
-                </div>
-                </div>
+<section class="act-dark film-band merged" id="ai-team" data-scene="team"><div class="wrap watch">
+  <div class="brain-callout-body watch-head">
+    <div class="brain-callout-label">How I&nbsp;work</div>
+    <h3>My expert team, two ways to&nbsp;watch</h3>
+    <p>The film is the short version, 88 seconds on why I built my expert team and how it works. The replay is the record. It plays back one real working session, and a seat lights up only when it actually read or wrote a file, went to the web, or used a&nbsp;connector.</p>
+  </div>
+  <div class="watch-grid">
+    <figure class="watch-tile">
+      <button class="film-poster" id="playFilm2" aria-label="Play the 88-second film"><img src="expert-team/film-poster.jpg" alt=""><span class="disc"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></span></button>
+      <figcaption><b>The film</b><span>88 seconds. Why I built the team and how it&nbsp;works.</span></figcaption>
+    </figure>
+    <figure class="watch-tile">
+      <a class="film-poster replay-poster" id="openReplay" href="expert-team/" aria-label="Open the session replay"><img src="images/replay-poster.jpg?v=20261120" alt=""><span class="disc"><svg viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg></span><span class="replay-tag">Session&nbsp;replay</span></a>
+      <figcaption><b>The session replay</b><span>Nine seats, 91 events, one real session in October&nbsp;2026.</span></figcaption>
+    </figure>
+  </div>
+  <p class="brain-callout-note">The replay plays right here, full screen. Music starts when you begin, and the speaker button mutes&nbsp;it.</p>
+</div>
+<div class="theater replay-theater" id="replayTheater" role="dialog" aria-modal="true" aria-label="The session replay">
+  <div class="replay-bar"><button class="replay-back" type="button">&larr; Back to the&nbsp;site</button><a class="replay-own" href="expert-team/" target="_blank" rel="noopener">Open in its own&nbsp;tab</a></div>
+  <div class="replay-frame"></div>
+</div>
 <div class="wrap"><div class="claim" id="team"><h2>I don't decide on one opinion&nbsp;anymore<span class="mk rest" data-rest="team" aria-hidden="true"></span></h2><p>My expert team is a standing bench of AI agents, each with a defined role and its own rules. They argue before I decide. Multi-agent AI with roles is not mine. The discipline after the argument is: they converge on one recommendation, and I own the&nbsp;call.</p><div class="record show" aria-live="polite">
     <p class="meta">A REAL DECISION, 2026-11-19 &middot; ABOUT THIS SITE &middot; SEAT LINES CONDENSED FROM THE&nbsp;REVIEW</p>
     <p class="q">I asked: my old site&rsquo;s design was perfectly fine as is, by most people&rsquo;s standards. But how far can I push it, and how far should&nbsp;I?</p>
@@ -2922,5 +2936,6 @@ const cbar=$('companyBanner');function cbOffset(){const on=cbar&&cbar.classList.
     </script>
 
     <script src="js/ask-joe-evidence.js?v=20261119c"></script>
+    <script src="js/replay-theater.js?v=20261120a"></script>
 </body>
 </html>

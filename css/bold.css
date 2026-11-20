@@ -1342,3 +1342,25 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .ladder-coda{background:var(--ink-warm);color:#d4d9e4;padding:0 0 clamp(64px,8vw,104px)!important}
 .ladder-coda .coda p{color:#d4d9e4}
 .ladder-coda + .act-paper{padding-top:clamp(64px,9vw,112px)!important}
+
+/* DRAFT 2026-11-20: the film and the session replay as two equal screens; the replay
+   opens inside the site (js/replay-theater.js), with a bar to get back. */
+.watch-head{max-width:760px;margin:0 0 32px}
+.watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.watch-tile{margin:0}
+.watch-tile figcaption{margin-top:14px;display:flex;flex-direction:column;gap:4px}
+.watch-tile figcaption b{font:700 clamp(19px,1.6vw,22px)/1.2 var(--display);color:var(--on-dark)}
+.watch-tile figcaption span{color:#d4d9e4;font-size:16px}
+a.film-poster{text-decoration:none}
+.replay-tag{position:absolute;left:14px;top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:4px 8px;background:rgba(7,10,24,.6)}
+.watch > .brain-callout-note{margin:22px 0 0}
+@media (max-width:760px){.watch-grid{grid-template-columns:1fr;gap:32px}}
+.replay-theater{padding:0;justify-content:flex-start;align-items:stretch}
+.replay-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px;padding:0 16px;background:var(--ink);border-bottom:1px solid var(--line);flex:none}
+.replay-back{background:none;border:1px solid var(--gold);color:var(--on-dark);padding:8px 14px;font-size:14px;cursor:pointer}
+.replay-back:hover{background:var(--gold);color:var(--ink)}
+.replay-own{color:var(--mid);font-size:14px}
+.replay-frame{flex:1;min-height:0}
+.replay-frame iframe{width:100%;height:100%;border:0;display:block;background:#05070d}
+/* While the replay is open, the site's floating buttons step aside so they do not sit on its controls. */
+html.replay-open .ask-joe-float,html.replay-open .back-to-top{display:none!important}
