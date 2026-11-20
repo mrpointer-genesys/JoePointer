@@ -1319,3 +1319,5 @@ body{padding-top:0}
 }
 /* long single words in display headings may break rather than push past a phone's edge */
 h1,h2,h3{overflow-wrap:break-word}
+/* Selected Work menu: the tab for the case study in view is filled gold (set by app.js as you scroll or tap) */
+.project-subnav-pill.active{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--ink)!important;font-weight:600}
