@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bold.css?v=20261119a">
+    <link rel="stylesheet" href="css/bold.css?v=20261119b">
     <link rel="preload" as="image" href="images/headshot-dark.jpg?v=20260903">
     <link rel="preload" as="image" href="images/hero-mountains.jpg?v=20260903" fetchpriority="high">
 
@@ -268,7 +268,7 @@
 <section class="act-seam"><div class="wrap">
         <div class="container">
             <blockquote>
-                <p>"Joe is one of the best leaders I've ever&nbsp;worked&nbsp;with."</p>
+                <p>“Joe is one of the best leaders I've ever&nbsp;worked&nbsp;with.”</p>
                 <cite>Keeley Lundquist, Org Development &amp; Change Consultant, CareerSpark project at&nbsp;TIAA</cite>
             </blockquote>
         </div>
@@ -1634,7 +1634,7 @@ Object.entries(parts).forEach(([id,len])=>{$(id).style.strokeDasharray=len;$(id)
 const stages=[...document.querySelectorAll('.stage')],bars=[...document.querySelectorAll('.prog i')];
 function frame(){
   const r=climb.getBoundingClientRect(),total=r.height-innerHeight,p=clamp(-r.top/total);
-  const rails=clamp(p/.08);
+  const rails=1;
   $('railL').style.strokeDashoffset=600*(1-rails);$('railR').style.strokeDashoffset=600*(1-rails);
   const t=clamp((p-.06)/.72),y=600-470*t;   // from the foot (y 600) to the open rung (y 130)
   const slide=clamp((p-.8)/.08);           // at the top it steps onto the rung's center
