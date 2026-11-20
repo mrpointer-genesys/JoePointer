@@ -1307,3 +1307,6 @@ body{padding-top:0}
 
 /* Selected Work menu sticks flush under the nav, which is 68px tall once the bar has scrolled away */
 .project-subnav{top:68px!important;margin-top:0!important}
+/* the Kirkpatrick paragraph sits directly under the ladder */
+.ladder-coda{padding-top:56px!important;padding-bottom:8px!important}
+.ladder-coda .coda{margin-bottom:0}
