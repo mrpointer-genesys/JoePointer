@@ -1332,3 +1332,7 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 /* Phones: the ladder's three progress dashes sat under the back-to-top button. The
    gold dot on the ladder already shows the stage, so the dashes step aside there. */
 @media (max-width:600px){.climb .prog{display:none}}
+
+/* Narrow phones (360px): "Transforming" at 38px was wider than the ladder's text
+   column and split mid-word. Scale the stage headings with the screen there. */
+@media (max-width:400px){.stage h3{font-size:min(38px,9.4vw)}}
