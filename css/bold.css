@@ -1290,3 +1290,5 @@ body[data-industry] .mk::after{border-color:rgba(236,200,125,.85)}
 :root{--gold-dark-src:#8a6d2f}
 body[data-industry]{--gold-dark-src:var(--t-dark)}
 .act-paper,.act-seam,.ladder-coda{--gold-dark:color-mix(in srgb,var(--gold-dark-src) 80%,#000)}
+/* Executive Summary gets a full section's breathing room after the Kirkpatrick paragraph */
+.ladder-coda + .act-paper{padding-top:clamp(72px,9vw,120px)!important}
