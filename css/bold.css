@@ -1323,13 +1323,8 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 .project-subnav::-webkit-scrollbar{display:none}
 .project-subnav .project-subnav-pills{overflow:visible;width:max-content}
 
-/* Menu jumps land every section title at the same spot as How I Think: 8px under the menu bar
-   (app.js TITLE_GAP). The ladder scene is pinned, so its title cannot be scrolled to
-   that line; instead its content starts there, ladder and text aligned at the top. */
-.climb{--title-gap:8px}
-.climb .stick{align-items:start}
-.climb .ladder-col,.climb .stage-wrap{margin-top:calc(68px + var(--title-gap))}
-@media (prefers-reduced-motion:reduce){.climb .ladder-col,.climb .stage-wrap{margin-top:0}}
+/* Menu jumps land every section title 8px under the menu bar (app.js TITLE_GAP),
+   except the ladder scene, which stays centered and lands at the top of its dark background. */
 /* Connect is the last section, so on tall screens the page ran out before its title
    could reach the line. Room enough for the jump: 120px top padding less the 76px line. */
 .close-sec{min-height:calc(100svh + 44px)}

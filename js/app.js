@@ -375,7 +375,7 @@ applyIndustryTemplate();
 // where scrollIntoView ignores scroll-padding-top on the html element.
 // Measures nav.getBoundingClientRect().bottom at call time so it works correctly
 // regardless of nav height, scroll state (compact vs full), or breakpoint.
-const TITLE_GAP = 8;  // keep in step with --title-gap in nav.css (the ladder scene)
+const TITLE_GAP = 8;
 function navScrollTo(target, delay) {
     function doScroll() {
         const nav = document.getElementById('mainNav');
@@ -398,11 +398,14 @@ function navScrollTo(target, delay) {
 
         // A main-menu section lands with its TITLE at the same spot under the menu bar,
         // whatever the section's own top padding (Joe, 2026-11-20). Other targets keep
-        // the old 8px clearance from their top edge.
+        // the old 8px clearance from their top edge. The ladder scene (#climb) is a
+        // centered full-screen scene: it lands with its dark background flush under the
+        // menu bar instead (Joe, 2026-11-19).
         const isCard = target.classList.contains('project-card');
-        const title = isCard ? null : target.querySelector(':scope > .wrap .section-header h2, :scope .section-header h2, :scope .kick');
+        const isScene = target.id === 'climb';
+        const title = (isCard || isScene) ? null : target.querySelector(':scope .section-header h2');
         const anchor = title || target;
-        const gap = title ? TITLE_GAP : 8;
+        const gap = title ? TITLE_GAP : (isScene ? 0 : 8);
         const want = (off) => Math.max(0, anchor.getBoundingClientRect().top + window.pageYOffset - off - gap);
         window.scrollTo({ top: want(offset), behavior: 'smooth' });
 
