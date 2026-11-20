@@ -375,6 +375,7 @@ applyIndustryTemplate();
 // where scrollIntoView ignores scroll-padding-top on the html element.
 // Measures nav.getBoundingClientRect().bottom at call time so it works correctly
 // regardless of nav height, scroll state (compact vs full), or breakpoint.
+const TITLE_GAP = 8;  // keep in step with --title-gap in nav.css (the ladder scene)
 function navScrollTo(target, delay) {
     function doScroll() {
         const nav = document.getElementById('mainNav');
@@ -395,8 +396,30 @@ function navScrollTo(target, delay) {
             if (subnavStickyBottom > navBottom) offset = subnavStickyBottom;
         }
 
-        const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: Math.max(0, targetTop - offset - 8), behavior: 'smooth' });
+        // A main-menu section lands with its TITLE at the same spot under the menu bar,
+        // whatever the section's own top padding (Joe, 2026-11-20). Other targets keep
+        // the old 8px clearance from their top edge.
+        const isCard = target.classList.contains('project-card');
+        const title = isCard ? null : target.querySelector(':scope > .wrap .section-header h2, :scope .section-header h2, :scope .kick');
+        const anchor = title || target;
+        const gap = title ? TITLE_GAP : 8;
+        const want = (off) => Math.max(0, anchor.getBoundingClientRect().top + window.pageYOffset - off - gap);
+        window.scrollTo({ top: want(offset), behavior: 'smooth' });
+
+        // The menu bar shrinks once the page scrolls, and images can move the page
+        // mid-scroll. Once it settles, re-measure the bar and nudge the title onto the line.
+        if (isCard) return;
+        let done = false;
+        const settle = () => {
+            if (done) return; done = true;
+            setTimeout(() => {
+                const live = nav ? nav.getBoundingClientRect().bottom : 0;
+                const off = anchor.getBoundingClientRect().top - (live + gap);
+                if (Math.abs(off) > 2) window.scrollTo({ top: want(live), behavior: 'smooth' });
+            }, 350);
+        };
+        window.addEventListener('scrollend', settle, { once: true });
+        setTimeout(settle, 1500);
     }
     delay ? setTimeout(doScroll, delay) : doScroll();
 }
