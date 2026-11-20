@@ -1307,3 +1307,9 @@ body[data-industry]{--gold-dark-src:var(--t-dark)}
 /* the tailored-link welcome band: a centred block, the same width as the reading sections */
 .welcome-band .container{max-width:900px;margin:0 auto;padding:0 clamp(16px,4vw,56px);text-align:center}
 .welcome-band .welcome-band-links{justify-content:center}
+/* The hero's image fades into the page's ink, so on magic-link templates (which recolour
+   the ink) there is no darker band between the hero and the "Adoption is personal" paragraph. */
+.hero{background:var(--ink)}
+.sky::after{background:
+  linear-gradient(90deg,color-mix(in srgb,var(--ink) 92%,transparent) 0%,color-mix(in srgb,var(--ink) 55%,transparent) 55%,color-mix(in srgb,var(--ink) 20%,transparent) 100%),
+  linear-gradient(180deg,color-mix(in srgb,var(--ink) 15%,transparent) 0%,color-mix(in srgb,var(--ink) 35%,transparent) 55%,var(--ink) 100%)}
