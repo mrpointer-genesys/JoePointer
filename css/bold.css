@@ -1287,3 +1287,13 @@ body{padding-top:0}
 .availability-banner.avail .status-badge{background:transparent!important;color:var(--gold)!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;animation:none!important}
 .availability-banner.avail .headline{color:var(--on-dark)!important}
 .availability-banner.avail .details{color:var(--mid)!important}
+
+/* ===== Ask Joe: answers that show their proof ===== */
+.chat-evidence{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font-size:12px;color:#5a6275}
+.chat-evidence-lead{width:100%;font-weight:600;letter-spacing:.02em}
+.chat-evidence-link{border:1px solid rgba(138,109,47,.55);background:#fff;color:#8a6d2f;padding:5px 10px;font:600 12px/1.2 var(--body);cursor:pointer;text-align:left}
+.chat-evidence-link:hover,.chat-evidence-link:focus-visible{background:#8a6d2f;color:#fff}
+.chat-evidence--none{font-style:italic}
+.evidence-flash{animation:evidenceFlash 2.6s ease-out}
+@keyframes evidenceFlash{0%{outline:3px solid rgba(201,169,97,0);outline-offset:6px}12%{outline:3px solid rgba(201,169,97,.95);outline-offset:6px}70%{outline:3px solid rgba(201,169,97,.6);outline-offset:6px}100%{outline:3px solid rgba(201,169,97,0);outline-offset:6px}}
+@media (prefers-reduced-motion:reduce){.evidence-flash{animation:none;outline:3px solid var(--gold);outline-offset:6px}}

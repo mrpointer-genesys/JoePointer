@@ -2838,7 +2838,8 @@ $('replay').onclick=()=>{
 
             const data = await res.json();
             const reply = data.content?.[0]?.text || 'Sorry, I had trouble with that. Email me directly at joe@joepointer.com.';
-            appendMessage('ai', reply);
+            const aiWrap = appendMessage('ai', reply);
+            if (window.askJoeEvidence) window.askJoeEvidence(aiWrap, reply);
             chatHistory.push({ role: 'assistant', content: reply });
             // Scroll so the user's question is at the top with the answer below
             requestAnimationFrame(() => {
@@ -3030,5 +3031,6 @@ $('replay').onclick=()=>{
     })();
     </script>
 
+    <script src="js/ask-joe-evidence.js?v=20261119b"></script>
 </body>
 </html>
