@@ -2,9 +2,20 @@
 
 The site already has the Voice button (in the Ask Joe header). The spoken answer itself has to come from the `joe-portfolio-chat` Cloudflare Worker, because that is where secret keys live. Until the Worker is updated, turning Voice on does nothing harmful: answers keep arriving as text.
 
+## 0. Find your existing Worker
+
+You already have this Worker. You set it up in March 2026, when the chat's Anthropic key moved out of the website. You don't need to create anything new. Your site is hosted on GitHub Pages, and the chat runs as a small separate service on Cloudflare.
+
+1. Go to dash.cloudflare.com and log in with the account that manages joepointer.com. Your domain's DNS is on Cloudflare, so this is that same account.
+2. In the left menu, open **Compute (Workers)**. On older dashboards it is called **Workers & Pages**.
+3. Click **joe-portfolio-chat**. Its address is `joe-portfolio-chat.joe-pointer.workers.dev`.
+4. To check you're in the right place, click **Edit code**. The code should mention `X-Ask-Joe-Version` and `joepointer.com`.
+
+If you can't find it, or would rather not edit it, invite Mike: **Manage Account > Members > Invite**, enter mpointer@gmail.com, and give him the **Workers Admin** role. He'll do steps 1 to 3.
+
 ## 1. Add the secrets
 
-Cloudflare dashboard > Workers & Pages > `joe-portfolio-chat` > Settings > Variables and Secrets > Add:
+In `joe-portfolio-chat` (found in step 0), go to Settings > Variables and Secrets > Add. You should already see your Anthropic key listed there, which also confirms you're in the right Worker.
 
 | Name | Type | Value |
 |---|---|---|
