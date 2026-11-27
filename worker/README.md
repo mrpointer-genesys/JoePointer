@@ -20,13 +20,13 @@ In `joe-portfolio-chat` (found in step 0), go to Settings > Variables and Secret
 | Name | Type | Value |
 |---|---|---|
 | `ELEVENLABS_API_KEY` | Secret | the key Mike sends you (never paste it into GitHub, email threads, or chat) |
-| `ELEVENLABS_VOICE_ID` | Secret | the ElevenLabs voice to use (see below) |
+| `ELEVENLABS_VOICE_ID` | Secret | the voice ID Mike sends you with the key (see below) |
 
 Optional: `ELEVENLABS_MODEL` (default `eleven_flash_v2_5`, the fast, cheap one).
 
 Command line alternative: `npx wrangler secret put ELEVENLABS_API_KEY`, then the same for `ELEVENLABS_VOICE_ID`.
 
-**Voice ID.** In ElevenLabs, open Voices, pick a voice (or a clone of your own voice, made with your consent), and copy its Voice ID. The site and the assistant both say the voice is AI, so a stock voice or your own clone are both honest.
+**Voice ID.** Mike creates an AI clone of your voice in his ElevenLabs account, the one the key belongs to. A voice only works with a key from the same account. Send him one to two minutes of yourself talking (a phone voice memo in a quiet room is fine), plus a line saying you consent to the clone. He'll send back the key and the voice ID together. The site and the assistant both say the voice is AI.
 
 ## 2. Paste in the code
 
